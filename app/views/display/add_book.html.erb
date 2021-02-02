@@ -1,0 +1,36 @@
+<html>
+<head></head>
+<style>
+body {
+  background-image: url('http://wallup.net/wp-content/uploads/2015/12/40105-gradient-simple_background-colorful-abstract.jpg');
+}
+</style>
+<body class="body">	
+<div class="Page New" align="center">
+	<h2> Add New Book</h2>
+
+<%= form_for(:book_records, url: {controller: "display", action: 'create_book'}) do |t| %>
+<table summary="Book Form Fields" cellspacing="10" border="1" cellpadding="2" bgcolor="violet">
+<tr>
+	<th>Book Name:-</th>
+	<td><%= t.text_field(:title) %></td>
+</tr>
+
+<tr>
+	<th>Book Price:-</th>
+	<td><%= t.text_field(:price) %></td>
+</tr>
+<tr>
+	<th>Book Author:-</th>
+	<td><%= t.text_field(:author) %></td>
+</tr>
+
+ </table>
+ <br><br>
+<div class="form-button" align="center">
+	<%= submit_tag ("create book") %><br><br>
+
+
+<%= link_to 'Back to book list', controller: "display", action: 'list_book', class: "back-link" %>
+</div>
+<% end -%>

@@ -1,0 +1,20 @@
+<html>
+<head></head>
+<style>
+body {
+  background-image: url('http://wallup.net/wp-content/uploads/2015/12/40105-gradient-simple_background-colorful-abstract.jpg');
+  align-content: center;
+}
+</style>
+
+<body class="body" >
+<div class="Book Delete">
+<h2> Delete Book</h2>
+<%= form_for(:book_record, url: {action: 'destroy', id: @book.id}) do |t| %>
+<p> Are you sure want to permantly delete this book </p>
+<p class="reference-name"> <%= @book.title %></p>
+<div class="form-button">
+<%= submit_tag("Delete Book") %>
+</div><% end %> 
+</div>
+<button><%= link_to "back to list",controller: "display",action: 'list_book', class: "Back-link" %></button>
